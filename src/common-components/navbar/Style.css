@@ -1,0 +1,34 @@
+.navbar-appbar {
+    background: '#ffffff';
+    color: '#000000';
+    font-weight: 1200;
+    font-size: xx-large;
+}
+
+
+.navbar-name {
+    color: #33373C;
+    font-size: 20px;
+}
+
+.navbar-address {
+    color: #696F75;
+    font-size: 10px;
+}
+
+.navbar-logo {
+    width: 100px;
+    border: 1px solid #EBEBEB;
+    border-radius: 10%;
+}
+@media screen and (max-width: 480px) {
+    .navbar-name {
+        font-size: 15px;
+    }
+    .navbar-address {
+        font-size: 10px;
+    }
+    .navbar-search {
+        display: none;
+      }
+  }

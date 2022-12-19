@@ -1,0 +1,10 @@
+.subnav__wrapper{
+    display: flex;
+    margin: auto;
+    padding: 10px;
+   
+}
+.subnav__item{
+    padding: 25px 25px 25px 25px;
+
+}

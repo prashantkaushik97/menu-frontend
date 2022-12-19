@@ -1,0 +1,23 @@
+.sidebar__wrapper{
+    padding: 25px 25px 25px 25px;
+    margin-top: 70px;
+}
+.sidebar__item{
+    padding: 25px 25px 25px 25px;
+}
+/* .sidebar__item:checked{
+background-color: red;} */
+.sidebar__clicked{
+    border-left:1px solid black ;
+
+}
+.sidebar__unclicked{
+    border-left: 0;
+
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar__wrapper{
+        display: none;
+    }
+  }

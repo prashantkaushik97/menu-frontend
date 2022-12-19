@@ -1,0 +1,29 @@
+.offers-card-logo{
+   height: 60px;
+}
+/* square buttons */
+.rec.rec-arrow {
+    border-radius: 50;
+    background-color: transparent;
+}
+/* round buttons on hover */
+.rec.rec-arrow:hover {
+    background-color: transparent;
+
+    border-radius: 50;
+}
+.rec.rec-arrow:active {
+    background-color: transparent;
+}
+/* hide disabled buttons */
+.rec.rec-arrow:disabled {
+    visibility: hidden;
+}
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item:focus {
+    
+    outline: none;
+    background-color: transparent;
+
+}
