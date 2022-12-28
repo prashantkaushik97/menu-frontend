@@ -17,6 +17,7 @@ import Navbar from '../common-components/navbar/Navbar';
 import './Style.css'
 import Sidebar from '../common-components/sidebar/Sidebar';
 import Subnav from '../common-components/sub-navigator/Subnav';
+import MenuRight from '../Components/MenuRight/MenuRight';
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -76,13 +77,17 @@ function Menu() {
   return (
 <>
 <Subnav/>
-
-    <div className='menu__wrapper'>
-      <Sidebar setSelectedItem={setselectedItem} items={items}/>
-      <div className='menu__title'>
+<div className='menu__title'>
 
       {selectedItem}
       </div>
+    <div className='menu__wrapper'>
+
+      <Sidebar selectedItem={selectedItem} setSelectedItem={setselectedItem} items={items}/>
+      
+      <div>
+        <MenuRight/></div>
+
     </div>
 </>
   );

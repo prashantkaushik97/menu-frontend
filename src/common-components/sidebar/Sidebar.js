@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import './Style.css'
 
-function Sidebar({ setSelectedItem, items }) {
-    function name(params) {
-
-    }
+function Sidebar({ setSelectedItem, items, selectedItem }) {
+    
     const [isClicked, setisClicked] = useState(false)
     return (
         
         <div className='sidebar__wrapper'>
             {items.map((item, index) => (
-                <div onClick={() => { setSelectedItem(item) }} className='sidebar__item'>
-                    <div onClick={()=>{setisClicked(true)}} className={`${isClicked ? "sidebar__clicked" : "sidebar__unclicked"}`}>
+                <div onClick={() => { setSelectedItem(item);setisClicked(true) }} className='sidebar__item'>
+                    <div className={`${item==selectedItem ? "sidebar__clicked" : "sidebar__unclicked"}`}>
                         {item}
 
                     </div>

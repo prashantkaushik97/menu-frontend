@@ -21,12 +21,12 @@ const MainRoutes = {
         },
        
         {
-            path: 'payment',
+            path: '/payment',
             element: <Payment />
         },
        
         {
-            path: 'cart',
+            path: '/cart',
             element: <Cart />
         }
        

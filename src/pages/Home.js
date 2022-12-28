@@ -7,11 +7,11 @@ function Home() {
   return (
     <div>
         <div style={{paddingTop:"50px"}}>
-          <h3 style={{paddingLeft:"80px"}}>Promos</h3>
+          <h3 style={{paddingLeft:"30px"}}>Promos</h3>
         <Offers/>
         </div>
         <div style={{paddingTop:"50px"}}>
-          <h3 style={{paddingLeft:"80px"}}>What would you like to order?</h3>
+          <h3 style={{paddingLeft:"30px"}}>What would you like to order?</h3>
         <Category/>
         </div>
         <div style={{paddingTop:"50px"}}>
