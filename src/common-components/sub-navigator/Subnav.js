@@ -13,24 +13,7 @@ function Subnav() {
             <div className='subnav__item'>
                 nn
             </div>
-            <div className='subnav__item'>
-                nn
-            </div>
-            <div className='subnav__item'>
-                nn
-            </div>
-            <div className='subnav__item'>
-                nn
-            </div>
-            <div className='subnav__item'>
-                nn
-            </div>
-            <div className='subnav__item'>
-                nn
-            </div>
-            <div className='subnav__item'>
-                nn
-            </div>
+           
         </div>
     );
 }

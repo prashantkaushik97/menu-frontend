@@ -20,29 +20,43 @@ function MenuRight() {
       <div className='menu__main'>
         <div className="menu__item_wrapper">
           <div>
-            <h3>Title</h3>
+            <h3>Paneer Biryani</h3>
             <p>
-              description
+            A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
             </p>
             <Button>uk</Button>
           </div>
-          <div>
-            hi
-          </div>
-
+          <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png'/>
         </div>
         <div className="menu__item_wrapper">
           <div>
-            <h3>Title</h3>
+            <h3>Paneer Biryani</h3>
             <p>
-              description
+            A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
             </p>
             <Button>uk</Button>
           </div>
+          <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png'/>
+        </div>
+        <div className="menu__item_wrapper">
           <div>
-            hi
+            <h3>Paneer Biryani</h3>
+            <p>
+            A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
+            </p>
+            <Button>uk</Button>
           </div>
-
+          <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png'/>
+        </div>
+        <div className="menu__item_wrapper">
+          <div>
+            <h3>Paneer Biryani</h3>
+            <p>
+            A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
+            </p>
+            <Button>uk</Button>
+          </div>
+          <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png'/>
         </div>
       </div>
     </div>

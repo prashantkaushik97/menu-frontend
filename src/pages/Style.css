@@ -1,7 +1,5 @@
 .menu__wrapper{
     display: flex;
-    width: 700px;
-
 }
 .menu__title{
     padding: 25px 25px 25px 25px;
