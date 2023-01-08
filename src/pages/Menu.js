@@ -76,7 +76,6 @@ function Menu() {
   );
   return (
 <>
-<Subnav/>
 <div className='menu__title'>
 
       {selectedItem}
