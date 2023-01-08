@@ -14,6 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Navbar from '../common-components/navbar/Navbar';
+import Footer from '../common-components/footer/Footer';
 import './Style.css'
 import Sidebar from '../common-components/sidebar/Sidebar';
 import Subnav from '../common-components/sub-navigator/Subnav';
@@ -52,9 +53,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 function Menu() {
-  
+
   const dummyCategories = ['Hokusai', 'Hiroshige', 'Utamaro', 'Kuniyoshi', 'Yoshitoshi']
-  const items=['Recommended', 'Binge Packs', 'Drinks', 'Non-Alcoholic', 'Vegan', 'Desserts']
+  const items = ['Recommended', 'Binge Packs', 'Drinks', 'Non-Alcoholic', 'Vegan', 'Desserts']
   const [selectedItem, setselectedItem] = useState(items[0])
 
   const classes = useStyles();
@@ -75,20 +76,20 @@ function Menu() {
     </div>
   );
   return (
-<>
-<div className='menu__title'>
-
-      {selectedItem}
+    <>
+      <div className='menu__title'>
+        {selectedItem}
       </div>
-    <div className='menu__wrapper'>
+      <div className='menu__wrapper'>
 
-      <Sidebar selectedItem={selectedItem} setSelectedItem={setselectedItem} items={items}/>
-      
-      <div>
-        <MenuRight/></div>
+        <Sidebar selectedItem={selectedItem} setSelectedItem={setselectedItem} items={items} />
 
-    </div>
-</>
+        <div>
+          <MenuRight />
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 Menu.propTypes = {

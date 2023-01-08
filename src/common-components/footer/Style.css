@@ -1,0 +1,10 @@
+.footer {
+  flex-shrink: 0;
+  text-align: center;
+  position: fixed;
+  background-color: tomato;
+  color: white;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
