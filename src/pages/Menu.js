@@ -11,6 +11,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Navbar from '../common-components/navbar/Navbar';
@@ -19,6 +21,7 @@ import './Style.css'
 import Sidebar from '../common-components/sidebar/Sidebar';
 import Subnav from '../common-components/sub-navigator/Subnav';
 import MenuRight from '../Components/MenuRight/MenuRight';
+import ItemCard from '../Components/ItemCard/ItemCard';
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
   root: {
@@ -81,13 +84,32 @@ function Menu() {
         {selectedItem}
       </div>
       <div className='menu__wrapper'>
-
         <Sidebar selectedItem={selectedItem} setSelectedItem={setselectedItem} items={items} />
-
         <div>
-          <MenuRight />
+          {/* <MenuRight /> */}
         </div>
       </div>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} md={4}>
+            {/* <Item>xs=8</Item> */}
+            <ItemCard />
+          </Grid>
+          <Grid item xs={6} md={4}>
+            {/* <Item>xs=4</Item> */}
+            <ItemCard />
+          </Grid>
+          <Grid item xs={6} md={4}>
+            {/* <Item>xs=4</Item> */}
+            <ItemCard />
+          </Grid>
+          <Grid item xs={6} md={4}>
+            {/* <Item>xs=8</Item> */}
+            <ItemCard />
+          </Grid>
+        </Grid>
+      </Box>
+
       <Footer />
     </>
   );
