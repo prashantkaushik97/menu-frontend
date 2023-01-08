@@ -87,6 +87,9 @@ gap: 20px;
     object-fit: cover;
     border-radius: 16px;
 }
+.menu__itemcount{
+  margin: 5px 5px 5px 5px ;
+}
 @media screen and (max-width: 480px) {
     .menu__main {
         flex-direction: column;
