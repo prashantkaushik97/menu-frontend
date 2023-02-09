@@ -8,12 +8,15 @@ import Badge from "@material-ui/core/Badge";
 import RemoveIcon from '@mui/icons-material/Remove';
 import './Style.css'
 import Subnav from '../../common-components/sub-navigator/Subnav';
+import { connect, useDispatch } from 'react-redux';
+
 function MenuRight() {
   const [itemCount, setItemCount] = React.useState(1);
-
+  const [order, setOrder] = React.useState([]);  
+  const dispatch=useDispatch()
   return (
     <div>
-      <Subnav/>
+      <Subnav />
 
       <div className='menu__main'>
         <div className="menu__item_wrapper">
@@ -21,13 +24,25 @@ function MenuRight() {
             <h3>Paneer Biryani</h3>
             <p>
               A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
+              here
             </p>
             <Badge color="secondary" badgeContent={itemCount}>
             </Badge>
             <ButtonGroup>
+              here
+            <Button
+                onClick={() => {
+                  // setItemCount(Math.max(itemCount - 1, 0));
+                  dispatch({type:"ADD_ITEM", payload:{itemId:"Paneer Tikka", quantity:1}})
+                }}
+              >
+                <RemoveIcon fontSize="small" />
+
+              </Button>
               <Button
                 onClick={() => {
-                  setItemCount(Math.max(itemCount - 1, 0));
+                  // setItemCount(Math.max(itemCount - 1, 0));
+                  dispatch({type:"INCREMENT_ITEM_QUANTITY", payload:"Paneer Biryani"})
                 }}
               >
                 <RemoveIcon fontSize="small" />
@@ -84,5 +99,7 @@ function MenuRight() {
     </div>
   )
 }
-
-export default MenuRight
+const mapStateToProps = state => ({
+  items: state.items
+});
+export default connect(mapStateToProps)(MenuRight);

@@ -9,46 +9,69 @@ import Badge from "@material-ui/core/Badge";
 import RemoveIcon from '@mui/icons-material/Remove';
 import './Style.css'
 import Subnav from '../../common-components/sub-navigator/Subnav';
+import { connect, useDispatch, useSelector } from 'react-redux';
 
-const ItemCard = () =>{
+const ItemCard = ({ dish }) => {
     const [itemCount, setItemCount] = React.useState(1);
+    const dispatch = useDispatch()
+    const items = useSelector(state => state.items)
     return (
-    
+
         <div className="menu__item_wrapper">
             <div>
-                <h3>Paneer Biryani</h3>
+                <h3>{dish.itemId}</h3>
                 <p>
-                    A spiced mix of Paneer and rice, traditionally cooked over an open fire in a leather pot
+                    {dish.itemDescription}
                 </p>
                 <Badge color="secondary" badgeContent={itemCount}>
                 </Badge>
                 <ButtonGroup>
-                    <Button
-                        onClick={() => {
-                            setItemCount(Math.max(itemCount - 1, 0));
-                        }}
-                    >
-                        <RemoveIcon fontSize="small" />
-    
-                    </Button>
-                    <Input
-                        className='input-quanity'
-                        value={itemCount}
-                    />
-                    <Button
-                        onClick={() => {
-                            setItemCount(itemCount + 1);
-                        }}
-                    >
-                        <AddIcon fontSize="small" />
-                    </Button>
-    
+                    {items.find(item => item.itemId === dish.itemId)?.quantity >= 1 ?
+                        <>
+                            <Button disabled={items.find(item => item.itemId === dish.itemId)?.quantity < 1}
+                                onClick={() => {
+                                    if (items.find(item => item.itemId === dish.itemId)?.quantity == 1) {
+                                        dispatch({ type: "REMOVE_ITEM", payload: dish.itemId })
+                                    }
+                                    else {
+                                        dispatch({ type: "DECREMENT_ITEM_QUANTITY", payload: { itemId: dish.itemId } })
+                                    }
+                                }}
+                            >
+                                <RemoveIcon fontSize="small" />
+
+                            </Button>
+                            <label
+                                className='input-quanity'
+                            >
+                                {items.find(item => item.itemId === dish.itemId)?.quantity}
+                            </label>
+                            <Button
+                                onClick={() => {
+                                    dispatch({ type: "INCREMENT_ITEM_QUANTITY", payload: { itemId: dish.itemId } })
+                                }}
+                            >
+                                <AddIcon fontSize="small" />
+                            </Button>
+                        </> :
+                        <Button
+                            onClick={() => {
+
+                                dispatch({ type: "ADD_ITEM", payload: { itemId: dish.itemId, quantity: 1 } })
+                            }}
+                        >
+                            Add
+
+                        </Button>
+                    }
                 </ButtonGroup>
             </div>
             <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png' />
         </div>
-        // </div>
     )
-} 
+}
 
-export default ItemCard;
+const mapStateToProps = state => ({
+    items: state.items
+});
+export default connect(mapStateToProps)(ItemCard);
