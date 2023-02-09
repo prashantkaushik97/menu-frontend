@@ -1,26 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import IconButton from '@material-ui/core/IconButton';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Navbar from '../common-components/navbar/Navbar';
 import Footer from '../common-components/footer/Footer';
 import './Style.css'
 import Sidebar from '../common-components/sidebar/Sidebar';
-import Subnav from '../common-components/sub-navigator/Subnav';
-import MenuRight from '../Components/MenuRight/MenuRight';
 import ItemCard from '../Components/ItemCard/ItemCard';
 const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
