@@ -23,8 +23,7 @@ const ItemCard = ({ dish }) => {
                 <p>
                     {dish.itemDescription}
                 </p>
-                <Badge color="secondary" badgeContent={itemCount}>
-                </Badge>
+
                 <ButtonGroup>
                     {items.find(item => item.itemId === dish.itemId)?.quantity >= 1 ?
                         <>
