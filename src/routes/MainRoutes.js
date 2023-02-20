@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+import OrderSlider from '../Components/OrderSlider/OrderSlider';
 import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 import Menu from '../pages/Menu';
@@ -28,6 +29,10 @@ const MainRoutes = {
         {
             path: '/cart',
             element: <Cart />
+        },
+        {
+            path:'/slider',
+            element:<Menu/>
         }
        
     ]

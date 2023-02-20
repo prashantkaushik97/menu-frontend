@@ -19,21 +19,21 @@ const ItemCard = ({ dish }) => {
 
         <div className="menu__item_wrapper">
             <div>
-                <h3>{dish.itemId}</h3>
+                <h3>{dish.itemName}</h3>
                 <p>
-                    {dish.itemDescription}
+                    {dish.description}
                 </p>
 
                 <ButtonGroup>
-                    {items.find(item => item.itemId === dish.itemId)?.quantity >= 1 ?
+                    {items.find(item => item._id === dish._id)?.quantity >= 1 ?
                         <>
-                            <Button disabled={items.find(item => item.itemId === dish.itemId)?.quantity < 1}
+                            <Button disabled={items.find(item => item._id === dish._id)?.quantity < 1}
                                 onClick={() => {
-                                    if (items.find(item => item.itemId === dish.itemId)?.quantity == 1) {
-                                        dispatch({ type: "REMOVE_ITEM", payload: dish.itemId })
+                                    if (items.find(item => item._id === dish._id)?.quantity == 1) {
+                                        dispatch({ type: "REMOVE_ITEM", payload: dish._id })
                                     }
                                     else {
-                                        dispatch({ type: "DECREMENT_ITEM_QUANTITY", payload: { itemId: dish.itemId } })
+                                        dispatch({ type: "DECREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
                                     }
                                 }}
                             >
@@ -43,11 +43,11 @@ const ItemCard = ({ dish }) => {
                             <label
                                 className='input-quanity'
                             >
-                                {items.find(item => item.itemId === dish.itemId)?.quantity}
+                                {items.find(item => item._id === dish._id)?.quantity}
                             </label>
                             <Button
                                 onClick={() => {
-                                    dispatch({ type: "INCREMENT_ITEM_QUANTITY", payload: { itemId: dish.itemId } })
+                                    dispatch({ type: "INCREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
                                 }}
                             >
                                 <AddIcon fontSize="small" />
@@ -56,7 +56,7 @@ const ItemCard = ({ dish }) => {
                         <Button
                             onClick={() => {
 
-                                dispatch({ type: "ADD_ITEM", payload: { itemId: dish.itemId, quantity: 1 } })
+                                dispatch({ type: "ADD_ITEM", payload: { _id: dish._id, quantity: 1 } })
                             }}
                         >
                             Add

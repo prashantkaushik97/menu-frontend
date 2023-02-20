@@ -1,10 +1,37 @@
+
 .footer {
   flex-shrink: 0;
   text-align: center;
   position: fixed;
-  background-color: tomato;
+  background-color: tomato; /* brand color */
   color: white;
   left: 0;
   bottom: 0;
   width: 100%;
+}
+.footer__lower{
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+}
+.option__clicked{
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  border-bottom: 5px solid tomato;
+  color: tomato;
+  font-weight: bold;
+  padding-bottom: 52px;
+}
+.option__unclicked{
+  display: flex;
+  justify-content: center;
+  width: 33%;
+  color: black;
+
 }

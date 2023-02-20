@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Cart from './pages/Cart';
 import Payment from './pages/Payment';
 import Navbar from './common-components/navbar/Navbar';
+import OrderSlider from './Components/OrderSlider/OrderSlider';
 
 // import Routes from './routes';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/payment" element={<Payment/>}/>
+          <Route path="/slider" element={<OrderSlider/>}/>
          
         </Routes>
     </Router>
