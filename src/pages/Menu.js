@@ -110,7 +110,7 @@ function Menu({selectedMenu}) {
       <br/>
       <br/>
       <br/>
-      <Footer />
+      <Footer current='menu'/>
     </>
   );
 }
