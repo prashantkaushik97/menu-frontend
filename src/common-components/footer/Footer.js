@@ -51,7 +51,7 @@ export default function Footer({ current }) {
             Orders
           </div>
         </div>
-        <div onClick={() => { setOptions({ menu: false, orders: false, payment: true }); navigate('/payments'); }} className={`${current==='payments'  ? "option__clicked" : "option__unclicked"}`} >
+        <div onClick={() => { setOptions({ menu: false, orders: false, payment: true }); navigate('/payment'); }} className={`${current==='payment'  ? "option__clicked" : "option__unclicked"}`} >
           <div>
             <ReceiptLongOutlinedIcon fontSize='large' htmlColor={`${options.payment ? "orange" : "black"}`} />
 

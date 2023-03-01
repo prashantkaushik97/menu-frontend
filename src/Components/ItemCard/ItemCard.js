@@ -19,53 +19,69 @@ const ItemCard = ({ dish }) => {
 
         <div className="menu__item_wrapper">
             <div>
-                <h3>{dish.itemName}</h3>
-                <p>
+                <div style={{ display: 'flex' }}>
+                    <legend style={{ padding: '8px' }}>{dish.itemName}</legend>
+                    <h3 style={{ padding: '10px', fontStyle: 'italic' }}>{dish.price}</h3>
+                    {dish.vegan && <img style={{ maxWidth: '40px', maxHeight: '40px' }} src='https://www.pngitem.com/pimgs/m/160-1609305_vegan-logo-png-vegan-or-vegetarian-symbol-transparent.png' />
+                    }
+
+                </div>
+                <p style={{maxWidth:'250px'}}>
                     {dish.description}
                 </p>
+                <div className='card__footer'>
+                    <ButtonGroup >
+                        {items.find(item => item._id === dish._id)?.quantity >= 1 ?
+                            <>
+                                <Button disabled={items.find(item => item._id === dish._id)?.quantity < 1}
+                                    onClick={() => {
+                                        if (items.find(item => item._id === dish._id)?.quantity == 1) {
+                                            dispatch({ type: "REMOVE_ITEM", payload: dish._id })
+                                        }
+                                        else {
+                                            dispatch({ type: "DECREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
+                                        }
+                                    }}
+                                >
+                                    <RemoveIcon fontSize="small" />
 
-                <ButtonGroup>
-                    {items.find(item => item._id === dish._id)?.quantity >= 1 ?
-                        <>
-                            <Button disabled={items.find(item => item._id === dish._id)?.quantity < 1}
-                                onClick={() => {
-                                    if (items.find(item => item._id === dish._id)?.quantity == 1) {
-                                        dispatch({ type: "REMOVE_ITEM", payload: dish._id })
-                                    }
-                                    else {
-                                        dispatch({ type: "DECREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
-                                    }
-                                }}
-                            >
-                                <RemoveIcon fontSize="small" />
-
-                            </Button>
-                            <label
-                                className='input-quanity'
-                            >
-                                {items.find(item => item._id === dish._id)?.quantity}
-                            </label>
+                                </Button>
+                                <label
+                                    className='input-quanity'
+                                >
+                                    {items.find(item => item._id === dish._id)?.quantity}
+                                </label>
+                                <Button
+                                    onClick={() => {
+                                        dispatch({ type: "INCREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
+                                    }}
+                                >
+                                    <AddIcon fontSize="small" />
+                                </Button>
+                            </> :
                             <Button
                                 onClick={() => {
-                                    dispatch({ type: "INCREMENT_ITEM_QUANTITY", payload: { _id: dish._id } })
+
+                                    dispatch({ type: "ADD_ITEM", payload: { _id: dish._id, quantity: 1 } })
                                 }}
                             >
-                                <AddIcon fontSize="small" />
+                                Add
+
                             </Button>
-                        </> :
-                        <Button
-                            onClick={() => {
-
-                                dispatch({ type: "ADD_ITEM", payload: { _id: dish._id, quantity: 1 } })
-                            }}
-                        >
-                            Add
-
-                        </Button>
-                    }
-                </ButtonGroup>
+                        }
+                    </ButtonGroup>
+                    
+                </div>
             </div>
+            <div className='card__right'>
             <img src='https://thebellyrulesthemind.net/wp-content/uploads/2020/02/instant-pot-paneer-biryani-720x540.png' />
+            <div className='card__nutrition'>
+                        {dish.nutrition.calories} kcal{", "}
+                        {dish.nutrition.protein}g protein
+
+                    </div>
+            </div>
+            
         </div>
     )
 }
