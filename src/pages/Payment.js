@@ -133,7 +133,10 @@ function Payment() {
             <button class="button button--full" onClick={(e) => e.preventDefault()}><svg class="icon">
               <use xlinkHref="#icon-shopping-bag" />
             </svg>Pay Now</button>
+            
           </div>
+          <br/>
+          <br/>
         </form>
       </div>
 <br/>
