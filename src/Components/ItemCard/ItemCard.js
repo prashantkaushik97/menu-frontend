@@ -22,7 +22,6 @@ const ItemCard = ({ dish }) => {
 
     return (
         <>
-        {console.log(dish)}
         <OrderOptionsModal inCart={inCart} currentDish={currentDish} optionsOpen={optionsOpen} setinCart={setinCart} setoptionsOpen={setoptionsOpen}/>
             <div className="menu__item_wrapper">
                 <div>
