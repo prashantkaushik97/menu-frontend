@@ -91,7 +91,6 @@ const ItemCard = ({ dish }) => {
                                 </Button>
                             }
                         </ButtonGroup>
-                        <Button onClick={()=>{setoptionsOpen(true)}}>HERE</Button>
                     </div>
                 </div>
                 <div className='card__right'>
