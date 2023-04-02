@@ -15,7 +15,7 @@ export default function Footer({ current }) {
 
   const [options, setOptions] = useState({ menu: false, orders: false, payment: false });
   const location = useLocation();
-  const items = useSelector(state => state.items)
+  const items = useSelector(state => state.cart.items)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Footer({ current }) {
 
   return <>
     <footer className="footer">
-      {location.pathname == '/menu' && Object.keys(items).length > 0 && <OrderSlider />}
+      {location.pathname == '/menu' && Object.keys(items).length>0&& <OrderSlider />}
       <div className='footer__lower'>
         <div onClick={() => { setOptions({ menu: true, orders: false, payment: false }); navigate('/menu'); }} className={`${current==='menu' ? "option__clicked" : "option__unclicked"}`} >
           <div>
